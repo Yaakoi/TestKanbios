@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const users = require("./routes/api/users");
+const employees = require("./routes/api/employees");
 
 const app = express();
 
@@ -31,6 +32,8 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
+app.use("/api/employees", employees);
+
 const port = process.env.PORT || 5000;
 app.listen(port, () =>
   console.log(`Serveur en cours d'exécution sur le port ${port}.`)
