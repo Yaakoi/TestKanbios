@@ -2,14 +2,14 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
+const keys = require("../config/keys");
 
 // Import du modèle Utilisateur
-const Employee = require("../../models/Employee");
+const Employee = require("../models/Employee");
 
 getEmployees = async (req, res) => {
     await Employee.find({}, (err, employees) => {
-        if (err) {
+        if (err) {express
             return res.status(400).json({ success: false, error: err })
         }
         if (!employees.length) {

@@ -13,7 +13,7 @@ app.use(
     extended: false,
   })
 );
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 
 // Config BDD
 const db = require("./config/keys").mongoURI;
@@ -34,7 +34,7 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api", employees);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 app.listen(port, () =>
   console.log(`Serveur en cours d'exécution sur le port ${port}.`)
 );

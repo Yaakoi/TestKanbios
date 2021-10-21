@@ -11,12 +11,12 @@ const EmployeeSchema = new Schema({
     required: true,
   },
   age: {
-    type: int,
+    type: Number,
     required: true,
   },
   salary: {
-    type: int,
+    type: Number,
     required: true,
   },
 });
-module.exports = Employee = mongoose.model("employees", UserSchema);
+module.exports = Employee = mongoose.model("employees", EmployeeSchema);
