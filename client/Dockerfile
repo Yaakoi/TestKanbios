@@ -15,6 +15,6 @@ RUN npm install --silent && npm install is-empty
 # copy local files to app folder
 COPY . .
 
-EXPOSE 3001
+EXPOSE 3000
 
 CMD ["npm","start"]

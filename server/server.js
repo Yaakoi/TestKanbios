@@ -32,9 +32,9 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
-app.use("/api", employees);
+app.use("/api",passport.authenticate('jwt', { session: false }), employees);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () =>
   console.log(`Serveur en cours d'exécution sur le port ${port}.`)
 );
