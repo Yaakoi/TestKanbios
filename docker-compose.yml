@@ -58,8 +58,6 @@ services:
       - ./script:/script
     networks:
       - app-network
-    profiles:
-      - script
 
 networks:
     app-network:
