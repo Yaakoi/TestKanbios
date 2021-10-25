@@ -14,8 +14,8 @@ getEmployees = async (req, res) => {
         }
         if (!employees.length) {
             return res
-                .status(404)
-                .json({ success: false, error: `Employee not found` })
+                .status(200)
+                .json({ success: true, employees })
         }
         return res.status(200).json({ employees })
     }).clone().catch(err => console.log(err))

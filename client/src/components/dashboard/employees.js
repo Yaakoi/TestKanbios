@@ -36,7 +36,8 @@ class employees extends Component {
 
     render(){
         const { employees } = this.props
-        if (typeof Object.values(employees)[0].employees == "undefined")
+        console.log(Object.values(employees)[0].employees)
+        if (typeof Object.values(employees)[0].employees == "undefined"){
             return (
                 <div className="spinner-box">
                     <div className="circle-border">
@@ -45,19 +46,27 @@ class employees extends Component {
                     <span>Chargement...</span>
                 </div>
             )
-            else{
+        }
+        else if (Object.values(employees)[0].employees.length == 0){
                 return (
-                    <div>
-                        <h1 id='title'>Employees list</h1>
-                        <table id="employees">
-                            <tbody>
-                                <tr>{this.renderTableHeader(employees)}</tr>
-                                {this.renderTableData(employees)}
-                            </tbody>
-                        </table>
-                    </div>
+                <div className="empty">
+                    <span>Il n'y a pas d'employés</span>
+                </div>
                 )
-            }
+        }
+        else{
+            return (
+                <div>
+                    <h1 id='title'>Employees list</h1>
+                    <table id="employees">
+                        <tbody>
+                            <tr>{this.renderTableHeader(employees)}</tr>
+                            {this.renderTableData(employees)}
+                        </tbody>
+                    </table>
+                </div>
+            )
+        }
     }
 }
 
