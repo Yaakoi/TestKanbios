@@ -47,7 +47,7 @@ class employees extends Component {
                 </div>
             )
         }
-        else if (Object.values(employees)[0].employees.length == 0){
+        else if (Object.values(employees)[0].employees.length === 0){
                 return (
                 <div className="empty">
                     <span>Il n'y a pas d'employés</span>
@@ -57,7 +57,7 @@ class employees extends Component {
         else{
             return (
                 <div>
-                    <h1 id='title'>Employees list</h1>
+                    <h1 id='title'>Liste des employés</h1>
                     <table id="employees">
                         <tbody>
                             <tr>{this.renderTableHeader(employees)}</tr>
