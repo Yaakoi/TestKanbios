@@ -44,6 +44,22 @@ services:
       - "3000:3000"
     networks:
       - app-network
+  script:
+    build:
+      context: ./script
+      dockerfile: Dockerfile
+    image: testkanbios-script
+    container_name: script
+    ports:
+      - 5001:5001
+    depends_on:
+      - mongo
+    volumes:
+      - ./script:/script
+    networks:
+      - app-network
+    profiles:
+      - script
 
 networks:
     app-network:
