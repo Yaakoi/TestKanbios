@@ -38,8 +38,6 @@ NOTES :
 - Sur la partie server, j'ai réalisé l'ensemble des appels API CRUD pour les employés. Mais je n'ai utilisé que l'appel permettant de récupérer la liste entière des employés au niveau du client.
 - Pour le script, j'ai transformé le .xls en .csv que j'ai directement ajouté au repo pour faciliter le test de l'application après le git clone. 
 
-Améliorations possibles :
-- Créer un conteneur docker basé sur une image python pour lancer le script. Avec la configuration automatique du module pymongo via le dockerfile.
-
 Problèmes rencontrés :
 - J'ai rencontré un problème lorsque j'ai voulu faire le système de chargement au niveau du client, je n'ai pas réussi à utiliser Redux correctement pour mettre à jour un state "loading" et me baser dessus pour le rendu de ma page "employees". J'ai donc trouvé une solution alternative.
+- Les scripts python d'insertion de données ne fonctionnent potentiellement pas sur tous les environnements
