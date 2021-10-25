@@ -9,6 +9,12 @@ class Dashboard extends Component {
     this.props.logoutUser();
   };
 
+  onEmployeeClick = (e) => {
+    e.preventDefault();
+    this.props.history.push("/employees");
+  }
+
+
   render() {
     const { user } = this.props.auth;
     return (
@@ -21,6 +27,17 @@ class Dashboard extends Component {
                 Vous êtes connecté ! 👏
               </p>
             </h4>
+            <button
+              style={{
+                borderRadius: "3px",
+                letterSpacing: "1.5px",
+                marginTop: "1rem",
+              }}
+              onClick={this.onEmployeeClick}
+              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+            >
+              Employés
+            </button>
             <button
               style={{
                 borderRadius: "3px",
